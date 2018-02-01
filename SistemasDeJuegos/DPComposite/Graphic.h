@@ -35,11 +35,17 @@ public:
 
 class Picture : public Graphic {
 private:
-	std::vector<Graphic*> graficos;
 public:
+	std::vector<Graphic*> graficos;
 	void Draw();
 	void Add(Graphic* g);
 	void Remove(Graphic* g);
 	Graphic getChild(int);
-	Picture(){}
+	Picture();
+	Picture(Graphic* g);
+	~Picture() {
+		for (Graphic* persona : graficos) {
+			delete persona;
+		}
+	}
 };
