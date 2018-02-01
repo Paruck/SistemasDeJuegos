@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <list>
+#include <vector>
 
 class Element
 {
@@ -52,15 +54,15 @@ class UpVisitor : public Visitor
 {
 	void visit(This *e)
 	{
-		std::cout << e->thiss() << '\n';
+		std::cout << "El visitante de arriba visito " +  e->thiss() << '\n';
 	}
 	void visit(That *e)
 	{
-		std::cout << e->that() << '\n';
+		std::cout << "El visitante de arriba visito " + e->that() << '\n';
 	}
 	void visit(TheOther *e)
 	{
-		std::cout << e->theOther() << '\n';
+		std::cout << "El visitante de arriba visito " + e->theOther() << '\n';
 	}
 };
 
@@ -68,14 +70,14 @@ class DownVisitor : public Visitor
 {
 	void visit(This *e)
 	{
-		std::cout << e->thiss() << '\n';
+		std::cout << "El visitante de abajo visito " + e->thiss() << '\n';
 	}
 	void visit(That *e)
 	{
-		std::cout << e->that() << '\n';
+		std::cout << "El visitante de abajo visito " + e->that() << '\n';
 	}
 	void visit(TheOther *e)
 	{
-		std::cout << e->theOther() << '\n';
+		std::cout << "El visitante de abajo visito " + e->theOther() << '\n';
 	}
 };
